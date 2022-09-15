@@ -11028,10 +11028,6 @@ const extendedJoi = joi_1.default.extend(joi => {
 });
 const configSchema = joi_1.default.object({
     'github-token': joi_1.default.string().trim().max(100),
-    'config-path': joi_1.default.string()
-        .trim()
-        .max(200)
-        .default('.github/label-actions.yml'),
     'process-only': joi_1.default.alternatives().try(extendedJoi
         .processOnly()
         .items(joi_1.default.string().valid('issue', 'pr', 'discussion'))

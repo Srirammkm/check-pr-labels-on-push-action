@@ -90,11 +90,6 @@ function getConfig() {
   const configSchema = Joi.object({
     'github-token': Joi.string().trim().max(100),
   
-    'config-path': Joi.string()
-      .trim()
-      .max(200)
-      .default('.github/label-actions.yml'),
-  
     'process-only': Joi.alternatives().try(
       extendedJoi
         .processOnly()
